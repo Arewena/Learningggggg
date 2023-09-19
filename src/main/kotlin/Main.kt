@@ -35,6 +35,8 @@ class GENMembers : GEN() {
     }
 }
 
+data class Roster(var name: String, var number: Int)
+
 
 fun main(args: Array<String>) {
     T1Members().members()
@@ -43,10 +45,25 @@ fun main(args: Array<String>) {
     //Hashmap(Hash 기법을 활용해서 데이터를 보관하는 자료 구조)와 Map의 차이점?
     //ㄴ다양한 길이를 가진 데이터를 고정된 길이를 가진 데이터로 매핑한 값(더 빠른 속도로 처리 가능)
     // lateinit은 초기화 이후에 값을 변경할수 있지만 lazy는 불가능.
-    val DRX = LCKteam().apply {
-        name = "DRX"
-        place = 6
+    val DK = Roster("", 0)
+    val result = DK.apply {
+        name = "CCSDK"
+        number = 5
     }
+
+    val DRX = run {
+        val name = "RCFPB"
+        val number = 5
+        Roster(name, number)
+    }
+
+    val KT = Roster("", 0)
+    val rKT = KT.let {
+        it.name = "KCBAL"
+        it.number = 5
+        it
+    }
+
 
     var team: LCKteam? = null
     //https://kotlinworld.com/255
