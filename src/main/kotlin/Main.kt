@@ -48,8 +48,19 @@ class GENMembers : GEN() {
 
 data class Roster(var name: String, var number: Int)
 
+enum class DplusKIA {
+    CANNA, CANYON, SHOWMAKER, DEFT, KELLIN
+}
+
 
 fun main(args: Array<String>) {
+    for (member in DplusKIA.entries) {println(member.toString())}
+
+    //반복문 개념?
+    repeat(5) { index ->
+        println("T1WIN $index")
+    }
+
     T1Members().members()
     GENMembers().members()
     GEN().members()
