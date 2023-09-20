@@ -18,12 +18,23 @@ abstract class T1 {
 }
 
 open class GEN {
+    var before: String  = "SSG"
+        set(value) {
+            field = value
+            println(field)
+        }
+        get() {
+            println("호출됨")
+            return field
+        }
     open fun members() {
+        before = "123"
         println("Doran, Peanut, Chovy, Peyz")
     }
 }
 
 class T1Members : T1() {
+
     override fun members() {
         println("Zeus, Oner, Faker, Gumayusi, Keria")
     }
