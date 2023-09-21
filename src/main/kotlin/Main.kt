@@ -52,8 +52,24 @@ enum class DplusKIA {
     CANNA, CANYON, SHOWMAKER, DEFT, KELLIN
 }
 
+//Public 생략 가능, 어디에서나 접근 가능
+public class A() { fun printA() {println("a")} }
+
+//같은 모듈안에서만 접근 가능(큰 프로젝트 아니면 잘 안씀)
+internal class B() {fun printB() {println("b")}}
+
+//하위 클래스 안에서만 접근 가능 (최상위 선언에 적용 불가
+//protected class C() {fun printC() {println("c")}}
+
+//같은 파일 내에서만 접근가능
+private  class D() {fun printD() {println("d")}}
+
 
 fun main(args: Array<String>) {
+
+    val add = {x: Int, y: Int -> x + y}
+    println(add(1, 2))
+
     for (member in DplusKIA.entries) {println(member.toString())}
 
     //반복문 개념?
