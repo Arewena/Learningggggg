@@ -1,3 +1,5 @@
+import java.util.Dictionary
+
 class Challengers {
     companion object {
 
@@ -83,6 +85,17 @@ fun main(args: Array<String>) {
     //Hashmap(Hash 기법을 활용해서 데이터를 보관하는 자료 구조)와 Map의 차이점?
     //ㄴ다양한 길이를 가진 데이터를 고정된 길이를 가진 데이터로 매핑한 값(더 빠른 속도로 처리 가능)
     // lateinit은 초기화 이후에 값을 변경할수 있지만 lazy는 불가능.
+
+    val place = listOf("KT", "GEN", "HLE", "DK", "T1") // 수정 불가능
+    val playOff = mutableListOf("GEN", "T1", "KT", "HLE", "DK") //수정 가능
+
+    val mapPlace = mapOf(1 to "KT", 2 to "GEN", 3 to "HLE", 4 to "DK", 5 to "T1") // Py의 dict랑 똑같은 개념
+    val poPlace = mutableMapOf(1 to "GEN", 2 to "T1", 3 to "KT", 4 to "HLE", 5 to "DK")
+
+    val setPlace = setOf("KT", "GEN", "HLE", "DK", "T1") // 중복 허용 안함, Py의 set과 똑같은 개념
+    val setPo = mutableSetOf("GEN", "T1", "KT", "HLE", "DK")
+
+
     val DK = Roster("", 0)
     val result = DK.apply {
         name = "CCSDK"
@@ -104,7 +117,6 @@ fun main(args: Array<String>) {
 
 
     var team: LCKteam? = null
-    //https://kotlinworld.com/255
 
 
 
