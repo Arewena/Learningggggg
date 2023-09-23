@@ -10,6 +10,8 @@ class Challengers {
     }
 }
 
+
+
 class LCKteam {
     var name = ""
     var place = 0
@@ -40,6 +42,13 @@ class T1Members : T1() {
     override fun members() {
         println("Zeus, Oner, Faker, Gumayusi, Keria")
     }
+}
+
+//제네릭
+//(E -> Element), (K -> Key), (N -> Number), (T -> Type), (V -> Value)
+class Gene<T> (val t: T) {
+    val arr1: Array<String> = arrayOf("IU가", "뭐하는", "아이유?")
+    val arr2: Array<String?> = arrayOf("총을", "대충쏘면", "설렁탕") //Nullable
 }
 
 class GENMembers : GEN() {
@@ -94,6 +103,7 @@ fun main(args: Array<String>) {
 
     val setPlace = setOf("KT", "GEN", "HLE", "DK", "T1") // 중복 허용 안함, Py의 set과 똑같은 개념
     val setPo = mutableSetOf("GEN", "T1", "KT", "HLE", "DK")
+
 
 
     val DK = Roster("", 0)
