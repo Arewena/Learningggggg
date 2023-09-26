@@ -1,4 +1,5 @@
 import java.util.Dictionary
+import java.util.*
 
 class Challengers {
     companion object {
@@ -42,6 +43,13 @@ class T1Members : T1() {
     override fun members() {
         println("Zeus, Oner, Faker, Gumayusi, Keria")
     }
+}
+
+//확장 함수
+//https://todaycode.tistory.com/176
+//클래스 안에 메서드를 구현해서 사용하는 효과를 내지만 실제로 클래스 안에 메서드가 만들어지지 않음. (추후 정리 예정)
+fun T1Members.second() {
+    println("Poby")
 }
 
 //제네릭
@@ -104,6 +112,11 @@ fun main(args: Array<String>) {
     val setPlace = setOf("KT", "GEN", "HLE", "DK", "T1") // 중복 허용 안함, Py의 set과 똑같은 개념
     val setPo = mutableSetOf("GEN", "T1", "KT", "HLE", "DK")
 
+    //Swap 개념
+    Collections.swap(playOff, 0, 1)
+    println(playOff)
+
+
 
 
     val DK = Roster("", 0)
@@ -117,6 +130,7 @@ fun main(args: Array<String>) {
         val number = 5
         Roster(name, number)
     }
+
 
     val KT = Roster("", 0)
     val rKT = KT.let {
