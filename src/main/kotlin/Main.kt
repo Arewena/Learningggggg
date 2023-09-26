@@ -125,6 +125,19 @@ fun main(args: Array<String>) {
         it
     }
 
+    //Data Destructing
+    //주 생성자의 프로퍼티의 대해 컴파일러가 알아서 Component를 만들어줌
+    //https://velog.io/@vov3616/Android-Destructuring-%EC%9E%90%EC%84%B8%ED%9E%88-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90
+    //keeping in mind having maintainable code has higher priority than writing less boilerplate or syntactic sugar
+
+    //위치를 기반으로 참조하기 때문에 새 코드의 추가에 유의할것
+    fun DestrutingExample(): Pair<Int, String> {return (Pair(1, "123"))}
+
+    val (name, number) = result
+    val (num, str) = DestrutingExample() //함수 리턴값으로도 사용 가능
+    println("$num, $str")
+    println("$name, $number")
+
 
     var team: LCKteam? = null
 
