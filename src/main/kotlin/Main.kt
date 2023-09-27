@@ -25,10 +25,12 @@ abstract class T1 {
 open class GEN {
     var before: String  = "SSG"
         set(value) {
+            //값을 설정할때 자동으로 호출
             field = value
             println(field)
         }
         get() {
+            //값을 호출할때 자동으로 호출
             println("호출됨")
             return field
         }
@@ -47,10 +49,16 @@ class T1Members : T1() {
 
 //확장 함수
 //https://todaycode.tistory.com/176
-//클래스 안에 메서드를 구현해서 사용하는 효과를 내지만 실제로 클래스 안에 메서드가 만들어지지 않음. (추후 정리 예정)
+//클래스 안에 메서드를 구현해서 사용하는 효과를 내지만 실제로 클래스 안에 메서드가 만들어지지 않음.
+//오버라이딩 불가능, 오버로드 가능
 fun T1Members.second() {
     println("Poby")
 }
+
+val String.lastchr: Char
+    get() = get(length-1)
+
+
 
 //제네릭
 //(E -> Element), (K -> Key), (N -> Number), (T -> Type), (V -> Value)
@@ -85,6 +93,7 @@ private  class D() {fun printD() {println("d")}}
 
 
 fun main(args: Array<String>) {
+    println("DEFT".lastchr)
 
     val add = {x: Int, y: Int -> x + y}
     println(add(1, 2))
