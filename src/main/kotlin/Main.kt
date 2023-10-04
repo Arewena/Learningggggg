@@ -22,6 +22,14 @@ abstract class T1 {
     abstract fun members()
 }
 
+
+var a: String = "abc"
+var b: String? = "abc" //Nullable
+//!! = can't be null
+
+
+
+
 open class GEN {
     var before: String  = "SSG"
         set(value) {
@@ -93,6 +101,8 @@ private  class D() {fun printD() {println("d")}}
 
 
 fun main(args: Array<String>) {
+    println(b?.length) //Safety call
+    val l = b?.length ?: -1
     println("DEFT".lastchr)
 
     val add = {x: Int, y: Int -> x + y}
