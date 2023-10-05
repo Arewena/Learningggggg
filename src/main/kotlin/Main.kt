@@ -100,7 +100,24 @@ internal class B() {fun printB() {println("b")}}
 private  class D() {fun printD() {println("d")}}
 
 
+//Label
 fun main(args: Array<String>) {
+    loop@ for (i in 1..5) {
+        for (j in 1..3) {
+            if (i == 2) {break@loop}
+        }
+    }
+
+    fun example() {
+        listOf(1, 2, 3, 4, 5).forEach lit@ {
+            if (it==3) { return@lit }
+            print(it)
+        }
+
+        println("123") //동작함
+    }
+
+
     println(b?.length) //Safety call
     val l = b?.length ?: -1
     println("DEFT".lastchr)
