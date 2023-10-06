@@ -12,6 +12,16 @@ class Challengers {
 }
 
 
+open class GENG() {
+    open fun mem() {println("도란 피넛 쵸비 페이즈 딜라이트")}
+}
+
+class GENChallengers : GENG() {
+    override fun mem() {
+        println("대충 2군 멤버")}
+}
+
+
 
 class LCKteam {
     var name = ""
